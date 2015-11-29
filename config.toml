@@ -6,6 +6,7 @@ title = "divan's blog"
 	contact = "mailto:ivan.daniluk@gmail.com"
     bio = "Gopher. Figure skating enthusiast."
 	subtitle = "random thoughts on Go, software and sports"
+	disqus = "divanblog"
 	avatar = "/images/avatar.jpg"
 
 [blackfriday]
