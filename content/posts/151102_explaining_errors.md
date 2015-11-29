@@ -2,6 +2,8 @@
 date = "2015-11-02T08:36:54-07:00"
 draft = false
 title = "Explaining Go error handling"
+slug = "go_errors"
+tags = ["golang"]
 
 +++
 
@@ -27,23 +29,24 @@ Of course, there are always some patterns to deal with errors (like with any oth
 
 Let’s try to illustrate it with an example, close enough to that one in the original article. Say, you have a task — “make repetitive writes with io.Writer and calculate number of bytes written, and stop after 1024-th byte”. You start with straightforward approach:
 
-<pre>var count, n int
+<pre><code class="go">var count, n int
 n = write(“one”)
 count += n
 if count >= 1024 {
     return
 }
+
 n = write(“two”)
 count += n
 if count >= 1024 {
     return
 }
-// etc</pre>
+// etc</code></pre>
 http://play.golang.org/p/8033Wp9xly
 
 Of course, you instantly see what’s wrong with this code and, following DRY principle, you decide to deduplicate code, moving repeating parts to separate function or closure:
 
-<pre>var count int
+<pre><code class="go">var count int
 cntWrite := func(s string) {
   n := write(s)
   count += n
@@ -51,14 +54,15 @@ cntWrite := func(s string) {
     os.Exit(0)
   }
 }
+
 cntWrite(“one”)
 cntWrite(“two”)
-cntWrite(“three”)</pre>
+cntWrite(“three”)</code></pre>
 http://play.golang.org/p/Hd12rk6wNk
 
 Now it’s better, but still not perfect. You still need a closure, which depends on external variable. It also uses os.Exit(), which makes it hardly reusable after first refactoring. We can do better. Let’s see how our thoughts flow — we have a write function, which does something else, except just writing bytes and we need it to be reusable and isolated entity. Let’s refactor our code:
 
-<pre>type cntWriter struct {
+<pre><code class="go">type cntWriter struct {
     count int
     w io.Writer
 }
@@ -79,7 +83,7 @@ func main() {
     cw.write(“two”)
     cw.write(“three”)
     fmt.Printf(“Written %d bytes\n”, cw.written())
-}</pre>
+}</code></pre>
 http://play.golang.org/p/66Xd1fD8II
 
 Now it looks much better, we can reuse this custom writer in other functions, it’s isolated and easy to test.

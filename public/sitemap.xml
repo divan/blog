@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2015-11-28T08:36:54-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/posts/20151128_ISU_stats/</loc>
+    <lastmod>2015-11-28T08:36:54-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/posts/20151127_Test/</loc>
+    <lastmod>2015-11-02T08:36:54-07:00</lastmod>
+  </url>
+  
+</urlset>

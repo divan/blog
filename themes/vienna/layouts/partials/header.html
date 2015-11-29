@@ -31,9 +31,9 @@
 
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/bootstrap.min.css" />
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/highlight.css" />
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/animate.css" />
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/font-awesome.min.css" />
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/github.css" />
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
   <link rel="shortcut icon" href="{{ .Site.BaseURL }}images/favicon.ico" />
   <link rel="apple-touch-icon" href="{{ .Site.BaseURL }}images/apple-touch-icon.png" />
   {{ if eq .URL "/" }}
@@ -43,8 +43,8 @@
 <body>
     <header class="global-header">
     <section class="header-text">
-      <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-      {{ with .Site.Params.subtitle }}
+      <h1><a href="{{ .Site.BaseURL }}" onmouseover="this.className+='animated pulse'">{{ .Site.Title }}</a></h1>
+	  {{ with .Site.Params.subtitle }}
       <div class="tag-line">
         {{ . }}
       </div>
