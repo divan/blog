@@ -1,7 +1,7 @@
 +++
 date = "2015-12-07T08:36:54-07:00"
 draft = false
-title = "Integration testing in Go using docker"
+title = "Integration testing in Go using Docker"
 slug = "integration_testing"
 tags = ["golang", "docker", "testing"]
 
@@ -68,7 +68,7 @@ import (
     "testing"
 )</code></pre>
   
-We place build tag `integration` here to make sure this test will run only when explicitly asked with `--tags=integration` flag. Yes, the test itself is fast, but still requires an external tool (docker), so we'd better separate integration tests and unit tests.
+We place build tag `integration` here to make sure this test will run only when explicitly asked with `--tags=integration` flag. Yes, the test itself is fast, but still requires an external tool (Docker), so we'd better separate integration tests and unit tests.
 
 By the way, we could protect in with [testing.Short](https://golang.org/pkg/testing/#Short) flag, but the behavior is opposite in this case - long tests run by default.
 
@@ -77,7 +77,7 @@ if testing.Short() {
         t.Skip("skipping test in short mode.")
 }</code></pre>
 
-### Running docker container
+### Running Docker container
 
 Before running our tests, we need to start our dependencies. There are a few packages to work with [Docker Remote API](https://docs.docker.com/engine/reference/api/docker_remote_api/) for Go, I will use the [one from fsouza](http://github.com/fsouza/go-dockerclient), which I successfully using for quite a long time. Install it with:
    
