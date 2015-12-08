@@ -1,15 +1,16 @@
-baseurl = "https://divan.io/"
+baseurl = "https://divan.github.io/"
 languageCode = "en-us"
 title = "divan's blog"
 [params]
 	github = "divan"
 	contact = "mailto:ivan.daniluk@gmail.com"
-    bio = "Gopher. Figure skating enthusiast."
+	bio = "Gopher. Figure skating enthusiast."
 	subtitle = "random thoughts on Go, software and sports"
 	disqus = "divanblog"
+	ga_api_key = "UA-70805978-1"
 	avatar = "/images/avatar.jpg"
 
-[blackfriday]
-  angledQuotes = false
-  fractions = false
-  extensions = ["laxHtmlBlocks"]
+	[blackfriday]
+	angledQuotes = false
+	fractions = false
+	extensions = ["laxHtmlBlocks"]
