@@ -10,7 +10,7 @@ title = "divan's blog"
 	ga_api_key = "UA-70805978-1"
 	avatar = "/images/avatar.jpg"
 
-	[blackfriday]
+[blackfriday]
 	angledQuotes = false
 	fractions = false
 	extensions = ["laxHtmlBlocks"]
