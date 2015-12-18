@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on divan&#39;s blog</title>
+    <link>https://divan.github.io/posts/</link>
+    <description>Recent content in Posts on divan&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Dec 2015 08:36:54 -0300</lastBuildDate>
+    <atom:link href="https://divan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to complain about Go</title>
+      <link>https://divan.github.io/posts/go_complain_howto/</link>
+      <pubDate>Mon, 14 Dec 2015 08:36:54 -0300</pubDate>
+      
+      <guid>https://divan.github.io/posts/go_complain_howto/</guid>
+      <description>
+
+&lt;p&gt;Over the years of existence of Go programming language, the articles with its critique was always popular, bringing a lot of discussion from both sides. Recently, &lt;a href=&#34;https://github.com/ksimka&#34;&gt;Maksim Kochkin&lt;/a&gt; even created GitHub repo with &lt;a href=&#34;https://github.com/ksimka/go-is-not-good&#34;&gt;curated list&lt;/a&gt; of articles complaining about golang&amp;rsquo;s imperfection.&lt;/p&gt;
+
+&lt;p&gt;So, is it true that ranting about Go flaws is a trend nowadays? With carefully gathered links in the repository above, we can check this! :) Unfortunately, there are only 17 articles in the list, which is a bit disappointing because it&amp;rsquo;s not enough for fine statistical analysis, but we can use this anyway.&lt;/p&gt;
+
+&lt;p&gt;Here is a trending line for the &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1qKFykmm0yapLq1FKuouvqVZkWo-HHCfJnrTikqRoAfs/edit#gid=1956718702&#34;&gt;number of Go complaints written per year&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://divan.github.io/images/go_rants_trend.png&#34; alt=&#34;Trending&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The trending is obvious - from one in 2009 to five in 2015. Hopefully, the next 2016 year will continue this trend line.&lt;/p&gt;
+
+&lt;p&gt;But what I liked most about this list - is a brief resume on the major authors&amp;rsquo; points. We can measure the popularity of users&amp;rsquo; complaints by counting aggregated points. Again, let&amp;rsquo;s do it in our Google Sheet document, which is written in Google, and probably involves a lot of production Go code to let us enjoy this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://divan.github.io/images/go_rants_top.png&#34; alt=&#34;Trending&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let me write again the top-5 winners:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;error handling / no exceptions&lt;/li&gt;
+&lt;li&gt;no generics&lt;/li&gt;
+&lt;li&gt;stuck in 70&amp;rsquo;s&lt;/li&gt;
+&lt;li&gt;no OOP&lt;/li&gt;
+&lt;li&gt;too opinionated&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Again, it&amp;rsquo;s a bit disappointing that absolute winner (&lt;em&gt;&amp;ldquo;error handling&amp;rdquo;&lt;/em&gt;) is mentioned only 7 times. Many thousands of people are using Go every day and only 7 put their major complaint into words in the form of a blog post? This flank definitely needs more support.&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t like Go, you may contribute here. Especially if you tried Go before you started complaining about its design. But how to start the  article to make a proper effect? Take a look at these 5 top complaints and choose on which one you want elaborate.&lt;/p&gt;
+
+&lt;p&gt;Keep in mind, &lt;em&gt;&amp;ldquo;error handling&amp;rdquo;&lt;/em&gt; and &lt;em&gt;&amp;ldquo;no generics&amp;rdquo;&lt;/em&gt; are absolute winners - you have absolutely no excuse not to add them to your list. Next, be careful with &lt;em&gt;&amp;ldquo;no OOP&amp;rdquo;&lt;/em&gt; because it&amp;rsquo;s easy to attack by quoting Alan Kay. &lt;em&gt;&amp;ldquo;Too opinionated&amp;rdquo;&lt;/em&gt; is a good choice, but should be carefully argued so you don&amp;rsquo;t look like a grouchy geek rather than a thoughtful hacker. &lt;em&gt;&amp;ldquo;Stuck in 70&amp;rsquo;s&amp;rdquo;&lt;/em&gt; works best if you want not only complain about Go but popularize another modern and objectively good programming language.&lt;/p&gt;
+
+&lt;p&gt;But what if it&amp;rsquo;s not enough? There are 41 more other complaints scored 1 or 2 in the list, not including ones you can make up on your own! So, to help you make a choice, here are some rules and guidelines on how to properly complain about Go, depending on you previous background and experience.&lt;/p&gt;
+
+&lt;p&gt;For example, if you come from&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;python:959aee67c1d0f41b07629a76d2bb3194&#34;&gt;&amp;hellip;Python&lt;/h2&gt;
+
+&lt;p&gt;We all love Python, so the attack vector should be on the maturity and abundance of libraries. NumPy is a must have point - Go still don&amp;rsquo;t have a scientific library of that quality. Not sure how SpaceX is able to use Go without one, but whatever, NumPy sells well.&lt;/p&gt;
+
+&lt;p&gt;Try not to mention mature libraries like Twisted, Requests and various solutions for solving the 10K problem. Just don&amp;rsquo;t mention it. Instead, try to disprove relatively high memory usage in Python. For example, you can say that Python memory usage after goroutines leakage is competitive with Go. Someone from Mozilla &lt;a href=&#34;https://docs.google.com/presentation/d/1LO_WI3N-3p2Wp9PDWyv5B6EGFZ8XTOTNJ7Hd40WOUHo/mobilepresent?pli=1&amp;amp;slide=id.g70b0035b2_1_119&#34;&gt;said this&lt;/a&gt;, so can you.&lt;/p&gt;
+
+&lt;p&gt;As a bonus, mention that Go slice indexing doesn&amp;rsquo;t have convenient -1 index. &lt;em&gt;&amp;ldquo;Is compiled&amp;rdquo;&lt;/em&gt; flaw also works here, without any explanation. Just because.&lt;/p&gt;
+
+&lt;h2 id=&#34;c:959aee67c1d0f41b07629a76d2bb3194&#34;&gt;&amp;hellip;C++&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;rsquo;re C++ developer, you are in the most vulnerable position, because Go was created as an answer to the C++ problems. Which easily can be muted or presented as powerful features.&lt;/p&gt;
+
+&lt;p&gt;Start by demonizing GC. Everyone knows that Garbage Collection is an evil and every CPU tact matters. Even if you write simple REST-backend in C++ and it takes 6 months of your life to accomplish it - you still have speed and no-GC blissfulness. Stick with that.&lt;/p&gt;
+
+&lt;p&gt;As a logical continuation - tell that Go is not good for embedded. Don&amp;rsquo;t mention that authors explicitly said that it was never meant as a language for embedded. It&amp;rsquo;s a great point anyway. And if your commenters will send you links to &lt;a href=&#34;http://embd.kidoman.io&#34;&gt;Embd&lt;/a&gt;, &lt;a href=&#34;http://gobot.io&#34;&gt;Gobot&lt;/a&gt; or &lt;a href=&#34;https://github.com/golang/mobile&#34;&gt;gomobile&lt;/a&gt;, just say that it&amp;rsquo;s not True Embedded™ or just disable comments.&lt;/p&gt;
+
+&lt;p&gt;And, of course, all rants about how Go restricting you from shooting yourself in the foot are also great here. Go doesn&amp;rsquo;t make you feel clever than your coworker that bangs his head against the wall trying to understand your code. Why do you need such a language after all?&lt;/p&gt;
+
+&lt;h2 id=&#34;rust:959aee67c1d0f41b07629a76d2bb3194&#34;&gt;&amp;hellip;Rust&lt;/h2&gt;
+
+&lt;p&gt;Despite the fact that there aren&amp;rsquo;t many people in the wild who can claim &amp;ldquo;background in Rust&amp;rdquo;, there are still a bunch of people from C++ background who are totally in love with Rust. They didn&amp;rsquo;t try it in production or even for pet projects, but that&amp;rsquo;s not important. Pure love doesn&amp;rsquo;t need logic. So, many points valid for C++ developers will work for you also. Don&amp;rsquo;t forget &lt;em&gt;&amp;ldquo;zero-cost abstraction&amp;rdquo;&lt;/em&gt; phrase after mentioning how evil GC is.&lt;/p&gt;
+
+&lt;p&gt;Cargo is considered to be a good solution for dependency management, so attack this side of Go aggressively. No chance to lose here. Also, your key points should be Go&amp;rsquo;s simple type system and lack of pattern matching. Basically, everything that differs in Go from Rust will work here. And that&amp;rsquo;s a lot, so you can write a solid longread. Or two.&lt;/p&gt;
+
+&lt;h2 id=&#34;java:959aee67c1d0f41b07629a76d2bb3194&#34;&gt;&amp;hellip;Java&lt;/h2&gt;
+
+&lt;p&gt;After mentioning generics and exceptions, punch them in the guts and smash them by comparing Java&amp;rsquo;s IDE with Go&amp;rsquo;s IDE. Of course, there is no Go IDE, because Go is too simple to require one, but it&amp;rsquo;s bad also. Double kick. It&amp;rsquo;s &amp;ldquo;advanced&amp;rdquo; vs &amp;ldquo;primitive&amp;rdquo; and you&amp;rsquo;re a winner here.&lt;/p&gt;
+
+&lt;p&gt;Next, write about the lack of good debugger (integrated into IDE, of course). How can someone write even simple code without a debugger? Don&amp;rsquo;t ask if you really need debugger in Go that much as you need it in Java and why. Stay away from this subject, it&amp;rsquo;s slippery.&lt;/p&gt;
+
+&lt;p&gt;And the whole range of &amp;lsquo;features&amp;rsquo; that you can use to make people understand why Go is bad - from lack of JVM to &lt;em&gt;&amp;ldquo;lack of basic data structures&amp;rdquo;&lt;/em&gt;. Take your time and improvise while your IDE starts.&lt;/p&gt;
+
+&lt;h2 id=&#34;ruby:959aee67c1d0f41b07629a76d2bb3194&#34;&gt;&amp;hellip;Ruby&lt;/h2&gt;
+
+&lt;p&gt;If you come from Ruby and don&amp;rsquo;t really like Go, I probably won&amp;rsquo;t help you. Go is quite popular in Ruby community and many Ruby developers, being non-arrogant and pragmatic, fall into Go pretty easily, so you&amp;rsquo;re in trouble. Even Basecamp, the guys that made Ruby on Rails, &lt;a href=&#34;https://signalvnoise.com/posts/3897-go-at-basecamp&#34;&gt;love Go&lt;/a&gt; and use it inside. Sorry.&lt;/p&gt;
+
+&lt;h2 id=&#34;d:959aee67c1d0f41b07629a76d2bb3194&#34;&gt;&amp;hellip;D&lt;/h2&gt;
+
+&lt;p&gt;Without any doubts, your main argument (after generics and exceptions, of course) should be the name of Google. It&amp;rsquo;s pretty much obvious that popularity of Go is simply a result of a huge money support by Google. Of course, Google pays people a lot to write articles about Go and to organize conferences and meetups. They are so rich, that next year Go community will have &lt;a href=&#34;https://github.com/golang/go/wiki/Conferences&#34;&gt;6 international conferences&lt;/a&gt; including one in &lt;a href=&#34;http://www.gophercon.ae/&#34;&gt;Dubai&lt;/a&gt;! When D have a company that can do the same for D, the world will understand that Go&amp;rsquo;s popularity is a fake.&lt;/p&gt;
+
+&lt;p&gt;Also, Go is not a real system programming language. You can&amp;rsquo;t write your own memory allocator with Go. So switch to D. Please.&lt;/p&gt;
+
+&lt;h2 id=&#34;perl:959aee67c1d0f41b07629a76d2bb3194&#34;&gt;&amp;hellip;Perl&lt;/h2&gt;
+
+&lt;p&gt;Emm..&lt;/p&gt;
+
+&lt;h2 id=&#34;c-1:959aee67c1d0f41b07629a76d2bb3194&#34;&gt;&amp;hellip;C#&lt;/h2&gt;
+
+&lt;p&gt;Probably the best strategy here is to attack the simplicity of Go. Simplicity equals primitivity, everyone knows in MS world. Also Go is made by Google, not by MS, so it&amp;rsquo;s doomed. There are so many good solutions for modern programming language theory you learn in the college course of C#! But poor people behind Go just are not aware of them. Don&amp;rsquo;t hesitate to teach them. You can&amp;rsquo;t do pretty much anything with a language that primitive as Go.&lt;/p&gt;
+
+&lt;p&gt;Also, mention the most relevant things - no Visual Studio support (&lt;a href=&#34;https://github.com/microsoft/vscode-go&#34;&gt;Visual Studio Code&amp;rsquo;s Go plugin&lt;/a&gt; doesn&amp;rsquo;t count). No debugger in IDE, of course. And no DirectX support, that&amp;rsquo;s important.&lt;/p&gt;
+
+&lt;h2 id=&#34;haskell:959aee67c1d0f41b07629a76d2bb3194&#34;&gt;&amp;hellip;Haskell&lt;/h2&gt;
+
+&lt;p&gt;If you come from Haskell, I shouldn&amp;rsquo;t give you any advice. You already must be a professional in mocking Go. It&amp;rsquo;s in Haskell 101 course. New Haskell books contain special chapter &amp;ldquo;How to laugh on Go&amp;rdquo;, after all.&lt;/p&gt;
+
+&lt;p&gt;Even if you &lt;a href=&#34;https://honza.ca/2015/11/language-choice&#34;&gt;intuitively understand&lt;/a&gt; that Go is way more practical than Haskell and entry barrier really matters - keep insisting that it has &amp;ldquo;objectively poor design&amp;rdquo;. Because everyone knows which language has objectively good design.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion:959aee67c1d0f41b07629a76d2bb3194&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;I hope this article will find its readers. In 2016, we need more articles with rants on Go - at least 6 to keep the trend. Some of the articles in the list above written by students and schoolboys, so if you just started CS class and don&amp;rsquo;t have any real-life experience - don&amp;rsquo;t hesitate to tell the world how bad Go is.&lt;/p&gt;
+
+&lt;p&gt;After all, the viral effect of the articles with criticism is well known - colleagues and managers send you the link as a prove that you shouldn&amp;rsquo;t use Go in production, without even reading or analyzing its content. The title is usually enough, so don&amp;rsquo;t be afraid.&lt;/p&gt;
+
+&lt;p&gt;Or.. you can just write some good code in the language that works best for your case.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Integration testing in Go using Docker</title>
+      <link>https://divan.github.io/posts/integration_testing/</link>
+      <pubDate>Mon, 07 Dec 2015 08:36:54 -0700</pubDate>
+      
+      <guid>https://divan.github.io/posts/integration_testing/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;Note: this post was originally written for the &lt;a href=&#34;https://blog.gopheracademy.com/advent-2015/introduction/&#34;&gt;Go Advent 2015&lt;/a&gt; series, but I discovered that a post with almost exactly the same subject (and even similar code!) already planned :) That&amp;rsquo;s amazing.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Golang is often used for writing microservices and various backends. Often these type of software do some computation, read/write data on external storage and expose it&amp;rsquo;s API via http handlers. All this functionality is remarkably easy to implement in Go and, especially if you&amp;rsquo;re creating &lt;a href=&#34;http://12factor.net&#34;&gt;12factor&lt;/a&gt;-compatible app, Go is your friend here.&lt;/p&gt;
+
+&lt;p&gt;This functionality is also easy to test using built-in Go testing tooling. But here&amp;rsquo;s the catch - unit testing or &lt;em&gt;small tests&lt;/em&gt; doesn&amp;rsquo;t guarantee that your service is working correctly. Even if you simply want to test your HTTP response codes, you have to inject dependencies first and connect your code to the external resources or storage. At this point you&amp;rsquo;ll probably realize you need to write a proper integration test, which include not only your code but all dependent resources as well.&lt;/p&gt;
+
+&lt;p&gt;But, how to do this without inventing your own scripts and harness code for mocking and starting services? How to make it as easy to use as a normal &amp;lsquo;go test&amp;rsquo; workflow? How to deal with setting up migrations and schemas for you databases? Finally, how to make it cross-platform, so you can easily run those tests on your Macbook as well as in your CI node?&lt;/p&gt;
+
+&lt;p&gt;Let me show one of the possible solutions I use for a number of services for quite a long time. It leverages the power of &lt;a href=&#34;https://www.docker.com&#34;&gt;Docker&lt;/a&gt; isolation and comfort of go test tooling, and thus very easy to use and, with little efforts, gives you truly cross-platform integration testing.&lt;/p&gt;
+
+&lt;p&gt;As an example I&amp;rsquo;ll take simple go-based webservice, which is often may be sufficient for REST-backends:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;REST-service based on &lt;a href=&#34;https://github.com/gin-gonic/gin&#34;&gt;gin&lt;/a&gt; framework&lt;/li&gt;
+&lt;li&gt;data storage - external MySQL database&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://bitbucket.org/liamstask/goose/&#34;&gt;goose&lt;/a&gt; tool for migrations&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;docker:23b513b340b05e75befe17e12589dce1&#34;&gt;Docker&lt;/h2&gt;
+
+&lt;p&gt;So, yes, we will use &lt;a href=&#34;https://www.docker.com&#34;&gt;Docker&lt;/a&gt; to handle all external dependencies (MySQL database in our case), and that&amp;rsquo;s exactly the case where Docker shines. Nowadays internet is &lt;a href=&#34;http://ctankersley.com/2014/09/30/docker-a-misunderstood-tool/&#34;&gt;full&lt;/a&gt; of &lt;a href=&#34;http://www.rkn.io/2014/09/26/no-silver-bullets/&#34;&gt;articles&lt;/a&gt; and &lt;a href=&#34;https://speakerdeck.com/rjschwei/docker-not-a-silver-bullet&#34;&gt;talks&lt;/a&gt; telling that Docker is not a &amp;lsquo;silver bullet&amp;rsquo;, and &lt;a href=&#34;https://valdhaus.co/writings/docker-misconceptions/&#34;&gt;putting&lt;/a&gt; a &lt;a href=&#34;http://sirupsen.com/production-docker/&#34;&gt;lot of criticism&lt;/a&gt; on many docker use cases. Of course, they&amp;rsquo;re absolutely right and many of their points are valid, but in this particular case it&amp;rsquo;s exactly the case where you should use Docker. It gives us everything we need - repeatability, isolation, speed, and portability.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start by creating &lt;a href=&#34;http://docs.docker.com/engine/reference/builder/&#34;&gt;Dockerfile&lt;/a&gt; for our dependency service - MySQL database. Normally you would use official mysql docker image, but we have to wind up migrations with goose, so we&amp;rsquo;d better off creating our custom MySQL debian image:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;dockerfile&#34;&gt;FROM debian
+
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update
+RUN apt-get install -y mysql-server
+
+RUN sed -i -e«s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/» /etc/mysql/my.cnf
+
+RUN apt-get install -y golang git ca-certificates gcc
+ENV GOPATH /root
+RUN go get bitbucket.org/liamstask/goose/cmd/goose
+
+ADD. /db
+RUN \
+service mysql start &amp;&amp; \
+sleep 10 &amp;&amp; \
+while true; do mysql -e «SELECT 1» &amp;&gt; /dev/null; [ $? -eq 0 ] &amp;&amp; break; echo -n &#34;.&#34;; sleep 1; done &amp;&amp; \
+mysql -e «GRANT ALL ON *.* to &#39;root&#39;@&#39;%&#39;; FLUSH PRIVILEGES;» &amp;&amp; \
+mysql -e «CREATE DATABASE mydb DEFAULT COLLATE utf8_general_ci;» &amp;&amp; \
+/root/bin/goose -env=production up &amp;&amp; \
+service mysql stop
+
+EXPOSE 3306
+CMD [«mysqld_safe»]&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then we build our image with &lt;code&gt;docker build -t mydb_test .&lt;/code&gt; command and run it with &lt;code&gt;docker run -p 3306:3306 mydb_test&lt;/code&gt;. The resulting container will have a fresh actual database instance with the latest migrations applied. Once the image is built it takes less than a second to start this container.&lt;/p&gt;
+
+&lt;p&gt;The actual name of container and database is not important here, so we use &lt;code&gt;mydb&lt;/code&gt; and &lt;code&gt;mydb_test&lt;/code&gt; - simply a convention.&lt;/p&gt;
+
+&lt;h2 id=&#34;go-tests:23b513b340b05e75befe17e12589dce1&#34;&gt;Go tests&lt;/h2&gt;
+
+&lt;p&gt;Now, it&amp;rsquo;s time to write some Go code. Remember, we want our test to be portable and issued with &lt;code&gt;go test&lt;/code&gt; command only. Let&amp;rsquo;s start our service_test.go:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;// +build integration
+
+package main
+
+import (
+    &#34;testing&#34;
+)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We place build tag &lt;code&gt;integration&lt;/code&gt; here to make sure this test will run only when explicitly asked with &lt;code&gt;--tags=integration&lt;/code&gt; flag. Yes, the test itself is fast, but still requires an external tool (Docker), so we&amp;rsquo;d better separate integration tests and unit tests.&lt;/p&gt;
+
+&lt;p&gt;By the way, we could protect in with &lt;a href=&#34;https://golang.org/pkg/testing/#Short&#34;&gt;testing.Short&lt;/a&gt; flag, but the behavior is opposite in this case - long tests run by default.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;
+if testing.Short() {
+        t.Skip(&#34;skipping test in short mode.&#34;)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;running-docker-container:23b513b340b05e75befe17e12589dce1&#34;&gt;Running Docker container&lt;/h3&gt;
+
+&lt;p&gt;Before running our tests, we need to start our dependencies. There are a few packages to work with &lt;a href=&#34;https://docs.docker.com/engine/reference/api/docker_remote_api/&#34;&gt;Docker Remote API&lt;/a&gt; for Go, I will use the &lt;a href=&#34;http://github.com/fsouza/go-dockerclient&#34;&gt;one from fsouza&lt;/a&gt;, which I successfully using for quite a long time. Install it with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;sh&#34;&gt;go get -u github.com/fsouza/go-dockerclient&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To start the container, we have to write following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;client, err := docker.NewClientFromEnv()
+if err != nil {
+    t.Fatalf(&#34;Cannot connect to Docker daemon: %s&#34;, err)
+}
+c, err := client.CreateContainer(createOptions(&#34;mydb_test&#34;))
+if err != nil {
+    t.Fatalf(&#34;Cannot create Docker container: %s&#34;, err)
+}
+defer func() {
+    if err := client.RemoveContainer(docker.RemoveContainerOptions{
+        ID:    c.ID,
+        Force: true,
+    }); err != nil {
+        t.Fatalf(&#34;cannot remove container: %s&#34;, err)
+    }
+}()
+
+err = client.StartContainer(c.ID, &amp;docker.HostConfig{})
+if err != nil {
+    t.Fatalf(&#34;Cannot start Docker container: %s&#34;, err)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;createOptions() is a helper function returning struct with container creating options. We pass our docker container name to that function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;func сreateOptions(dbname string) docker.CreateContainerOptions {
+    ports := make(map[docker.Port]struct{})
+    ports[&#34;3306&#34;] = struct{}{}
+    opts := docker.CreateContainerOptions{
+        Config: &amp;docker.Config{
+            Image:        dbname,
+            ExposedPorts: ports,
+        },
+    }
+
+    return opts
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After that we need to write code which will wait for DB to start, extract IP address for connection, form DSN for database/sql driver and open the actual connection:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;// wait for container to wake up
+if err := waitStarted(client, c.ID, 5*time.Second); err != nil {
+    t.Fatalf(&#34;Couldn&#39;t reach MySQL server for testing, aborting.&#34;)
+}
+c, err = client.InspectContainer(c.ID)
+if err != nil {
+    t.Fatalf(&#34;Couldn&#39;t inspect container: %s&#34;, err)
+}
+
+// determine IP address for MySQL
+ip = strings.TrimSpace(c.NetworkSettings.IPAddress)
+
+// wait MySQL to wake up
+if err := waitReachable(ip+&#34;:3306&#34;, 5*time.Second); err != nil {
+    t.Fatalf(&#34;Couldn&#39;t reach MySQL server for testing, aborting.&#34;)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here we wait for two actions to happen: first is to get network inside container up, so we can obtain it&amp;rsquo;s IP address, and second, is MySQL service being actually started. Waiting functions are a bit tricky, so here they are:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;// waitReachable waits for hostport to became reachable for the maxWait time.
+func waitReachable(hostport string, maxWait time.Duration) error {
+    done := time.Now().Add(maxWait)
+    for time.Now().Before(done) {
+        c, err := net.Dial(&#34;tcp&#34;, hostport)
+        if err == nil {
+            c.Close()
+            return nil
+        }
+        time.Sleep(100 * time.Millisecond)
+    }
+    return fmt.Errorf(&#34;cannot connect %v for %v&#34;, hostport, maxWait)
+}
+
+// waitStarted waits for a container to start for the maxWait time.
+func waitStarted(client *docker.Client, id string, maxWait time.Duration) error {
+    done := time.Now().Add(maxWait)
+    for time.Now().Before(done) {
+        c, err := client.InspectContainer(id)
+        if err != nil {
+            break
+        }
+        if c.State.Running {
+            return nil
+        }
+        time.Sleep(100 * time.Millisecond)
+    }
+    return fmt.Errorf(&#34;cannot start container %s for %v&#34;, id, maxWait)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Basically, it&amp;rsquo;s enough to work with our container, but here is another issue comes in - if you run MacOS X or Windows, you use Docker via the proxy virtual machine with tiny linux, &lt;code&gt;docker-machine&lt;/code&gt; (or its predecessor, &lt;code&gt;boot2docker&lt;/code&gt;). It means you should use docker-machine&amp;rsquo;s IP address and not real container IP, which is not exposed outside of the docker-host linux VM.&lt;/p&gt;
+
+&lt;h3 id=&#34;tuning-for-portability:23b513b340b05e75befe17e12589dce1&#34;&gt;Tuning for portability&lt;/h3&gt;
+
+&lt;p&gt;Again, let&amp;rsquo;s just write code to accomplish that, as it&amp;rsquo;s quite trivial:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;// DockerMachineIP returns IP of docker-machine or boot2docker VM instance.
+//
+// If docker-machine or boot2docker is running and has IP, it will be used to
+// connect to dockerized services (MySQL, etc).
+//
+// Basically, it adds support for MacOS X and Windows.
+func DockerMachineIP() string {
+    // Docker-machine is a modern solution for docker in MacOS X.
+    // Try to detect it, with fallback to boot2docker
+    var dockerMachine bool
+    machine := os.Getenv(&#34;DOCKER_MACHINE_NAME&#34;)
+    if machine != &#34;&#34; {
+        dockerMachine = true
+    }
+
+    var buf bytes.Buffer
+
+    var cmd *exec.Cmd
+    if dockerMachine {
+        cmd = exec.Command(&#34;docker-machine&#34;, &#34;ip&#34;, machine)
+    } else {
+        cmd = exec.Command(&#34;boot2docker&#34;, &#34;ip&#34;)
+    }
+    cmd.Stdout = &amp;buf
+
+    if err := cmd.Run(); err != nil {
+        // ignore error, as it&#39;s perfectly OK on Linux
+        return &#34;&#34;
+    }
+
+    return buf.String()
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For working with docker-machine we will also need to pass port forwarding configuration in CreateContainerOptions.&lt;/p&gt;
+
+&lt;p&gt;At this point, the amount of supporting code becomes quite notable, and it&amp;rsquo;s better to move all docker related code into separate a subpackage, perhaps in internal/ directory. Let&amp;rsquo;s name it &lt;code&gt;internal/dockertest&lt;/code&gt;. The source of this package can be &lt;a href=&#34;http://pastebin.com/faUUN0M1&#34;&gt;found here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;running-from-tests:23b513b340b05e75befe17e12589dce1&#34;&gt;Running from tests&lt;/h3&gt;
+
+&lt;p&gt;Now, all we need is to import our &lt;code&gt;internal/dockertest&lt;/code&gt; subpackage and start MySQL with a single line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;// start db in docker container
+dsn, deferFn, err := dockertest.StartMysql()
+if err != nil {
+    t.Fatalf(&#34;cannot start mysql in container for testing: %s&#34;, err)
+}
+defer deferFn()&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pass &lt;code&gt;dsn&lt;/code&gt; to sql.Open() or your own service init function, and your code will connect to the database inside the container.
+Note, that StartMysql() returns also a defer function, which will properly stop and remove container. Our test code knows nothing about underlying mechanisms. It just works as if it was a normal MySQL resource.&lt;/p&gt;
+
+&lt;h3 id=&#34;testing-http-endpoints:23b513b340b05e75befe17e12589dce1&#34;&gt;Testing http endpoints&lt;/h3&gt;
+
+&lt;p&gt;Next step is to test http-endpoints. We may want to test response codes, proper error messages, expected headers or data format and so on. And, following our desire to not depend on any external testing scripts, we want to run all the tests within the Go code. And Go allows us to do so using net/http/httptest package.&lt;/p&gt;
+
+&lt;p&gt;Honestly, &lt;code&gt;httptest&lt;/code&gt; was one of the most surprising things in Go, when I first saw it. net/http design was quite unusual and elegant for me, but httptest looked like a killer feature for testing http services. It leverages the power of interfaces in Go, and particularly, the http.ResponseWriter interface to achieve in-memory round-trip of http requests. We don&amp;rsquo;t need to ask OS to open ports, deal with permissions and busy ports - it&amp;rsquo;s all in memory.&lt;/p&gt;
+
+&lt;p&gt;And as soon as gin framework implements http.Handler interface, which looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;type Handler interface {
+    ServeHTTP(ResponseWriter, *Request)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;we can use it transparently with httptest. I will also use amazing GoConvey testing framework, which implements behaviour-driven testing for Go, and fully compatible with the default &lt;code&gt;go test&lt;/code&gt; workflow.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;func NewServer(db *sql.DB) *gin.Engine {
+    r := gin.Default()
+    r.Use(cors.Middleware(cors.Options{}))
+    // more middlewares ...
+
+    // Health check
+    r.GET(&#34;/ping&#34;, ping)
+
+    // CRUD resources
+    usersRes := &amp;UsersResource{db: db}
+
+    // Define routes
+    api := r.Group(&#34;/api&#34;)
+    {
+        v1 := api.Group(&#34;/v1&#34;)
+        {
+            rest.CRUD(v1, &#34;/users&#34;, usersRes)
+        }
+    }
+
+    return r
+}
+...
+r := NewServer(db)
+Convey(&#34;Users endpoints should respond correctly&#34;, t, func() {
+    Convey(&#34;User should return empty list&#34;, func() {
+        // it&#39;s safe to ignore error here, because we&#39;re manually entering URL
+        req, _ := http.NewRequest(&#34;GET&#34;, &#34;http://localhost/api/v1/users&#34;, nil)
+        w := httptest.NewRecorder()
+        r.ServeHTTP(w, req)
+
+        So(w.Code, ShouldEqual, http.StatusOK)
+        body := strings.TrimSpace(w.Body.String())
+        So(body, ShouldEqual, &#34;[]&#34;)
+    })
+})&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;GoConvey has also an astonishing web UI, I guarantee you will start writing more tests just to see that nice blinking &amp;ldquo;PASS&amp;rdquo; message! :)&lt;/p&gt;
+
+&lt;p&gt;And now, after you get the idea, we can add more tests for testing basic CRUD functionality for our simple service:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;Convey(&#34;Create should return ID of a newly created user&#34;, func() {
+    user := &amp;User{Name: &#34;Test user&#34;}
+    data, err := json.Marshal(user)
+    So(err, ShouldBeNil)
+    buf := bytes.NewBuffer(data)
+    req, err := http.NewRequest(&#34;POST&#34;, &#34;http://localhost/api/v1/users&#34;, buf)
+    So(err, ShouldBeNil)
+    w := httptest.NewRecorder()
+    r.ServeHTTP(w, req)
+
+    So(w.Code, ShouldEqual, http.StatusOK)
+    body := strings.TrimSpace(w.Body.String())
+    So(body, ShouldEqual, &#34;1&#34;)
+})
+Convey(&#34;List should return one user with name &#39;Test user&#39;&#34;, func() {
+    req, _ := http.NewRequest(&#34;GET&#34;, &#34;http://localhost/api/v1/users&#34;, nil)
+    w := httptest.NewRecorder()
+    r.ServeHTTP(w, req)
+
+    So(w.Code, ShouldEqual, http.StatusOK)
+    body := w.Body.Bytes()
+    var users []*User
+    err := json.Unmarshal(body, &amp;users)
+    So(err, ShouldBeNil)
+    user := &amp;User{
+        ID: 1,
+        Name: &#34;Test user&#34;,
+    }
+    So(len(users), ShouldEqual, 1)
+    So(users[0], ShouldResemble, user)
+})&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;conclusion:23b513b340b05e75befe17e12589dce1&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;As you may see, Go not only make testing a lot easiers but also make use of BDD and TDD methodologies very easy to follow and opens new possibilities for cross-platform integration- and acceptance- testing.&lt;/p&gt;
+
+&lt;p&gt;This example provided here is simplified on purpose, but it&amp;rsquo;s based on the real production code which is being tested in this way for more than 1.5 years and survived a number of refactorings and migrations&amp;rsquo; updates. On my Macbook Air, the whole test, from start to end (compile code, run docker container in docker-machine and test ~35 http requests, shut down the container) it takes about 3 seconds. On native Linux system it&amp;rsquo;s obviously a lot faster.&lt;/p&gt;
+
+&lt;p&gt;One may ask why not publish this code as a separate library, and make the whole task (and article) even shorter. But the point here is that for every different service there may be a different set of service connections, different usage patterns and so on. And what is really important is that with Go it&amp;rsquo;s so easy to write this harness code for your needs, that you don&amp;rsquo;t have an excuse not to do this. Whether you need many similar containers in parallel (probably, you&amp;rsquo;ll need to randomize exposed ports), or you have to interconnect some services before starting them - you just write in Go, hiding all the complexity from the actual testing code.&lt;/p&gt;
+
+&lt;p&gt;And always write tests! There is not excuse not to write them anymore.&lt;/p&gt;
+
+&lt;p&gt;UPD: After writing the article, discovered the package &lt;a href=&#34;https://github.com/ory-am/dockertest&#34;&gt;dockertest&lt;/a&gt; by Aeneas Rekkas (&lt;a href=&#34;https://twitter.com/_aeneasr&#34;&gt;@_aeneasr&lt;/a&gt;), which does almost exactly the same as a code in this article, and looks pretty solid. Don&amp;rsquo;t miss it out!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Explaining Go error handling</title>
+      <link>https://divan.github.io/posts/go_errors/</link>
+      <pubDate>Mon, 02 Nov 2015 08:36:54 -0700</pubDate>
+      
+      <guid>https://divan.github.io/posts/go_errors/</guid>
+      <description>&lt;p&gt;I recently translated great article — &lt;a href=&#34;https://blog.golang.org/errors-are-values&#34;&gt;Errors are values&lt;/a&gt; by Rob Pike — and we discussed it in our &lt;a href=&#34;https://golangshow.com/&#34;&gt;podcast Golangshow&lt;/a&gt; (in russian). One thing I was surprised about is that even experienced Go developers sometimes do not understand the core idea of that article.&lt;/p&gt;
+
+&lt;p&gt;Looking back, I remember my first impressions when I read it for the first time. It was similar to &lt;em&gt;“It looks like Pike just adds some complexity to what could’ve been solved gracefully with exceptions”&lt;/em&gt;. I have never been fond of exceptions, but that’s the first thought I remember. The example in the article was clearly asking for comparison with exceptions’ way to deal with errors and it didn’t look like a winner here.&lt;/p&gt;
+
+&lt;p&gt;Still I knew, there must be something more profound in these words — &lt;em&gt;“errors are values”&lt;/em&gt;. After all, I was always comfortable with Go errors handling, so I gave some time to myself to absorb the article.&lt;/p&gt;
+
+&lt;p&gt;And then I got it.&lt;/p&gt;
+
+&lt;p&gt;Go doesn’t want us to treat errors as something different from our main code. Erroneous situation is a first-class citizen in program flow design.&lt;/p&gt;
+
+&lt;blockquote&gt;Errors shouldn’t be hidden or ignored in the same way as you don’t hide or ignore any other code. They are part of your logic and code.&lt;/blockquote&gt;
+
+&lt;p&gt;Just try to imagine your way of thinking when you deal with usual concepts — values, conditions, loops etc., and apply it to the errors. Errors are the same level entities as the rest of your code. You don’t ignore return values of other types for no reason, right? You don’t ask language to bring special way to handle boolean variables, because “if” is boring. You don’t ask yourself “What should I do, if I don’t know what to do with this slice on this abstraction level?”. You just program the logic you need.&lt;/p&gt;
+
+&lt;p&gt;Again, errors are values, and errors’ handling is a normal programming.&lt;/p&gt;
+
+&lt;p&gt;Of course, there are always some patterns to deal with errors (like with any other programming conception), but they emerge naturally and fit perfectly in the existing language capabilities.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Let’s try to illustrate it with an example, close enough to that one in the original article. Say, you have a task — “make repetitive writes with io.Writer and calculate number of bytes written, and stop after 1024-th byte”. You start with straightforward approach:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;var count, n int
+n = write(“one”)
+count += n
+if count &gt;= 1024 {
+    return
+}
+
+n = write(“two”)
+count += n
+if count &gt;= 1024 {
+    return
+}
+// etc&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://play.golang.org/p/8033Wp9xly&#34;&gt;http://play.golang.org/p/8033Wp9xly&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Of course, you instantly see what’s wrong with this code and, following DRY principle, you decide to deduplicate code, moving repeating parts to separate function or closure:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;var count int
+cntWrite := func(s string) {
+  n := write(s)
+  count += n
+  if count &gt;= 1024 {
+    os.Exit(0)
+  }
+}
+
+cntWrite(“one”)
+cntWrite(“two”)
+cntWrite(“three”)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://play.golang.org/p/Hd12rk6wNk&#34;&gt;http://play.golang.org/p/Hd12rk6wNk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now it’s better, but still not perfect. You still need a closure, which depends on external variable. It also uses os.Exit(), which makes it hardly reusable after first refactoring. We can do better. Let’s see how our thoughts flow — we have a write function, which does something else, except just writing bytes and we need it to be reusable and isolated entity. Let’s refactor our code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;go&#34;&gt;type cntWriter struct {
+    count int
+    w io.Writer
+}
+
+func (cw *cntWriter) write(s string) {
+    if cw.count &gt;= 1024 {
+        return 
+    }
+    n := write(s)
+    cw.count += n
+}
+
+func (cw *cntWriter) written() int { return cw.count }
+
+func main() {
+    cw := &amp;cntWriter{}
+    cw.write(“one”)
+    cw.write(“two”)
+    cw.write(“three”)
+    fmt.Printf(“Written %d bytes\n”, cw.written())
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://play.golang.org/p/66Xd1fD8II&#34;&gt;http://play.golang.org/p/66Xd1fD8II&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now it looks much better, we can reuse this custom writer in other functions, it’s isolated and easy to test.&lt;/p&gt;
+
+&lt;p&gt;Now, just replace ‘counter’ with ‘error value’ and you’ll get almost the same example as in original article about error handling. But take a note how easy and logical was your flow of thoughts towards this code. You wasn’t distracted by looking for the special counting/passing features of the language. You simply was implementing the logic you need in the best possible way.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This idea is profound enough and could be hard to grasp, especially with the mindset focused on The Only Right Way To Handle Errors™. It definitely takes some time to absorb.&lt;/p&gt;
+
+&lt;p&gt;Of course, it’s debatable, and I can find both a lot of pros and cons for this approach, as well as for others. We’re not in the black&amp;amp;white world, but Go approach to errors is kind of mature and fresh at the same time, it extremely simple and hard to understand at the same time, it requires some rethinking and effort to get the idea. But, what is more important, it works great in practice.&lt;/p&gt;
+
+&lt;p&gt;And once you get it, you stop fight the language. You stop looking for special ways to handle or hide errors. Go makes you respect errors as any other part of your program. You just handle them, without expecting language do the magic for you. In the long run, your code becomes better, even if do not realize it yet.&lt;/p&gt;
+
+&lt;p&gt;Now, come and read this article again —  &lt;a href=&#34;https://blog.golang.org/errors-are-values&#34;&gt;Errors are values&lt;/a&gt; — and try to get the gist of it with this perspective.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
