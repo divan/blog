@@ -10,7 +10,7 @@ tags = ["golang", "tooling"]
 
 You've probably heard that story about NPM community and [LeftPad](https://www.npmjs.com/package/left-pad) package, that broke thousands JavaScript projects worldwide. There was a nice follow-up article titled ["Have We Forget How To Program"](http://www.haneycodes.net/npm-left-pad-have-we-forgotten-how-to-program/) and one guy even created [left-pad.io](http://left-pad.io) - Left-Pad As A Service web service. People got a lot of fun discussing this story.
 
-I personally find this story amazing, because there is no single point of failure, but rather a set of thing and coincidences resulted in a disaster. Every person I spoke about left-pad story sees it through it's own lens of concern. Some blame JS-community, some talks about how important vendoring is nowadays and others stands for absolutist views of the DRY principle.
+I personally find this story amazing, because there is no single point of failure, but rather a set of things and coincidences resulted in a disaster. Every person I spoke about left-pad story sees it through it's own lens of concern. Some blame JS-community, some talks about how important vendoring is nowadays and others stands for absolutist views of the DRY principle.
 
 For me my lens were the chances of getting into something similar in Go ecosystem. Of course, after initial thinking, I came to resolution that there is nothing to worry about - Go community doesn't tend to create packages for every single simple function over there. Yes, someone inspired by NPM LeftPad story created [similar package for Go](https://github.com/keltia/leftpad) - but the fact it was created after that fiasco story only confirms my  thoughts.
 
@@ -112,11 +112,11 @@ I'm looking forward to hear suggestions on how to do it better. Maybe it's worth
 
 Anyway, it's always possible to manually inspect detailed output and filter small enough dependencies by yourself.
 
-Also, please, don't rely on these numbers heavily. It's likely to be somehow incorrect in some cases. Yes, it's tested with simple cases, but there are lot of cases, where it's even impossible to tell what is a "correct" value. For example, how do you calculate Cumulative number of lines for two functions with circular depency? There are also probably some bugs I didn't catch (hey, it survived 10 refactorings in 3 days!), so feel free to open an issue or send a PR.
+Also, please, don't rely on these numbers heavily. It's likely to be somehow incorrect in some cases. Yes, it's tested with simple cases, but there are lot of cases, where it's even impossible to tell what is a "correct" value. For example, how do you calculate Cumulative number of lines for two functions with circular dependency? There are also probably some bugs I didn't catch (hey, it survived 10 refactorings in 3 days!), so feel free to open an issue or send a PR.
 
 # Stdlib
 
-Depscheck also can work with stdlib packages. Normally it threats stdlib imports as 'internal' and doesn't analyze/report them. But you can explicitly ask for that using `-stdlib` command line flag. Suggestions are silenced in this mode because stdlib is smarter than this tool. Anyway, it can give interesting insights into your package or application.
+Depscheck also can work with stdlib packages. Normally it treats stdlib imports as 'internal' and doesn't analyze/report them. But you can explicitly ask for that using `-stdlib` command line flag. Suggestions are silenced in this mode because stdlib is smarter than this tool. Anyway, it can give interesting insights into your package or application.
 
 For example, here is the sample output for checking against stdlib `time` package (though, you can use -stdlib flag for any package, not only stdlib):
 ```
@@ -150,7 +150,7 @@ time: 4 packages, 294 LOC, 50 calls, 17 depth, 3 depth int.
 +---------+---------+-------+-------+--------+-------+----------+
 ```
 
-You may even run it against the whole stdlib and build some statistics in R Studio or your favorite statistics tool. Let's use `go list std` command to get all stdlib packages names and feed them to *depcheck*: There is a special `-totalonly` flag, which tells depscheck to output only totals oneliner, which is easily parseable:
+You may even run it against the whole stdlib and build some charts in RStudio or your favorite statistics tool. Let's use `go list std` command to get all stdlib packages names and feed them to *depcheck*. There is a special `-totalonly` flag, which tells depscheck to output only totals oneliner, which is easily parseable:
 
 ```
 $ for i in $(go list std); do depscheck -stdlib -totalonly $i; done
