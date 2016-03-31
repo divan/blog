@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "divan's blog"
 [params]
 	github = "divan"
+	twitter = "idanyliuk"
 	contact = "mailto:ivan.daniluk@gmail.com"
 	bio = "Gopher. Figure skating enthusiast."
 	subtitle = "random thoughts on Go, software and sports"

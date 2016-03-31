@@ -3,6 +3,7 @@ Description = ""
 Tags = []
 date = "2016-03-31T04:30:29+03:00"
 title = "LeftPad and Go: can tooling help?"
+slug = "leftpad_and_go"
 tags = ["golang", "tooling"]
 
 +++
