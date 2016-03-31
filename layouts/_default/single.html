@@ -32,7 +32,9 @@
         <h1 class="author-name text-primary">{{ . }}</h1>
         {{ end }}
         {{ with .Site.Params.bio }}
-        <div class="author-bio">{{ . }}</div>
+		<div class="author-bio">{{ . }}<br />
+			Follow me at <a href="https://twitter.com/idanyliuk" target="_blank">@idanyliuk</a>
+		</div>
         {{ end }}
       </div>
       {{ with .Site.Params.contact }}
