@@ -62,7 +62,7 @@ github.com/divan/expvarmon: 4 packages, 1022 LOC, 93 calls, 11 depth, 23 depth i
 Run with -v option to see detailed stats for dependencies.
 ```
 
-And by the way, in an example above it totally make sense. Rerunning with `-v` options to see the detials, it's easy to see that package only uses single flat function from `ranges` of 29 lines of code - ranges.Parse, and it can be easily copied to my codebase, if license permits, of course. It removes the whole bunch of burden in case I'll need to vendor dependencies or use some vendoring tools.
+And by the way, in an example above it totally make sense. Rerunning with `-v` options to see the details, it's easy to see that package only uses single flat function from `ranges` of 29 lines of code - ranges.Parse, and it can be easily copied to my codebase, if license permits, of course. It removes the whole bunch of burden in case I'll need to vendor dependencies or use some vendoring tools.
 
 Of course, this suggestion doesn't mean you have to do it. It just asks you to pay attention to these particular imports if you want to make your codebase a little bit better. It's up to me to decide what to do with this import. The tools suggestions are recommendation only.
 
