@@ -1,0 +1,110 @@
++++
+Tags = ["golang", "life"]
+date = "2016-08-03T19:28:46+02:00"
+title = "My GopherCon experience"
+slug = "gophercon16"
+
++++
+
+A couple of weeks ago I gave a talk at the largest Go conference, [GopherCon](http://gophercon.com), in Denver. It was the first time I attended GopherCon at all, and the first time ever I spoke in English in front of 1400+ people, and it was an absolutely incredible experience. Here is my story.
+
+My journey to GopherCon started on a cold winter day in the apartments in the center of Odessa, Ukraine, where I was living at that time. I was one of the organizers of the first Go meetup in Lviv (Ukraine) and have prepared one general talk about Go. We targeted mainly newcomers, so I wanted to make another talk that would share my passion and admiration of some of the coolest aspects of Go - concurrency.
+
+### Idea
+I started to think how to show the beauty and easiness of writing concurrent programs in Go. There are numerous blog posts and talks on this subject, but I wanted something more appealing for the absolute beginners. With my love for good visualizations, my thoughts slipped into an attempt to visualize concurrency in some fancy way. At the last [dotGo](http://www.dotgo.eu) conference in Paris, I was impressed by [Matt Aimonetti's talk](https://www.youtube.com/watch?v=TI8OW22WZvQ) where he was using hardware with LEDs to demonstrate program flow. It was really nice and inspiring talk, so I decided to take this idea further and use a lot of LEDs to show goroutines and channels with colors and lights. That's gonna be cool!
+
+But pretty soon I realized that I simply don't see a way how to show it in a clear and beautiful way. Colored lights is a cool idea, but it should convey and demonstrate concurrency concepts in a first place. That led me to rethink how I see concurrency flows in my mind and it was pretty much clear that I see it in 3D. After quick googling about "3D LEDs chains" I understood that at this moment my goal was not feasible with this approach.
+
+Okay, let's try another way. I'll draw it myself with nice visualization tools we have nowadays! There are a bunch of super nice JS frameworks for visualizing complex things, so I should get what I want in a couple of nights of coding. But this attempt failed as well - all those frameworks are well suited for representing 2D data, or for very specific 3D charts, but not for the custom 3D visualizations. Everything was suggesting to take a closer look at WebGL, and the only feasible option was to implement my idea myself from scratch.
+
+### First implementation
+Next weekend I've spent writing some JS code and learning [Three.js](http://threejs.org) framework, which was surprisingly cool. I must admit that writing JS code is a pain for me and I had to go the SPA every evening to get rid of a stress and muscular spasms. In a week or so, I had a very simple demo of ping-pong code example, taken from [Sameer Ajmani talk](https://www.youtube.com/watch?v=QDDwwePbDtw). It was very simple, with concurrency steps and timings hardcoded manually, but it was enough to get excited.
+
+Next challenge was to automate tracing concurrency steps and timings automatically from any Go program. My first attempt was to modify AST of the source and insert Println() calls saying something like "goroutine started", "send to channel value X" and so on. After practicing some kung-fu with go/[ast,parser,types} packages, I came with the solution, but it was inherently flawed. It worked for very simple examples, where channels had the same name. For more complex examples I had to rename it manually, expand recursions and so on.
+
+Anyway, it was enough to create slides for the talk for the meetup. I [gave a talk](http://divan.github.io/talks/2016/lviv/#/), but it was quite bad, as I almost didn't prepare and I was mostly busy with organization and preparing the first talk. So in a few days, on my way home, on a train, I wrote an article ["Visualising Concurrency in Go"](https://divan.github.io/posts/go_concurrency_visualize/) and published it next day.
+![PrimeSieve](/demos/gifs/primesieve.gif)
+
+### Article
+[Article](https://divan.github.io/posts/go_concurrency_visualize/) was very well received. I was surprised by the number of responses, retweets, likes and stars. I got a few job proposals, letters asking permission to republish it or translate into another language. One of the letters was from [Anthony Starks](https://twitter.com/ajstarks), the author of amazing SVG library [SVGo](https://github.com/ajstarks/svgo), who asked if I'm considering to propose this idea as a talk for GopherCon. I didn't even consider myself as a speaker at the conference of that level, but next day I actually sent the proposal without any expectations.
+
+In a few weeks, I got an email that my proposal has been accepted. I'm gonna be speaking at GopherCon! Wow!
+
+### Preparing to GopherCon
+I felt thrilled, pleased and scared at the same time. First of all, I've never given a talk in English before. In fact, I didn't even speak English on a daily basis those days. Second, I had to rewrite my initial approach in order to open source it and present at the conference. Third, I was facing the uncertainty of how scary this experience would be for me - giving a talk at the local meetup and at the conference with 1500+ people it's not the same.
+
+The good thing is that I had time to prepare. More than 4 months of preparations! I even created a countdown on my watch, so I could track time left and prepare more efficiently. 
+![Gophercon Watch Counter](/images/gophercon_watch.jpg)
+
+Around that time I read [a post](http://waitbutwhy.com/2016/03/doing-a-ted-talk-the-full-story.html) in my favorite blog ["Wait But Why?"](http://waitbutwhy.com) about author's experience of preparation to his TED talk. It was a funny post, with some very important observations. One of the favorite topics of the author, Tim Urban, is a procrastination (actual topic of his talk, by the way) and he wrote how he spent most of the time procrastinating instead of preparing for the conference.
+
+Of course, I'm not like this. I have full 4 months ahead of me and I will use every day to do my best and prepare as best as I can!
+
+### Preparing to GopherCon, again
+Three months later I realized that I really have to stop procrastinating and start doing something.
+
+Okay, I had a good excuse. Around that time I changed my job and moved to Barcelona to work at [Typeform](http://typeform.com). An exciting experience, great team and the company, but also a lot of time stolen from my preparation plans and coding. My new approach for tracing concurrency events was based on Dmitry Vyukov's [execution tracer](https://docs.google.com/document/u/1/d/1FP5apqzBgr7ahCCgFO-yoVhk4YZrNIDNf9RybngBc14/pub) and I actually did some initial coding. I also started speaking English on a daily basis which gave me some more confidence.
+
+I also read a great book, ["The Official TED guide to Public Speaking"](https://www.google.es/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjAhLL4s6jOAhXJtRQKHXQ7DKkQFggeMAA&url=https:%2F%2Fwww.ted.com%2Fread%2Fted-talks-the-official-ted-guide-to-public-speaking&usg=AFQjCNGBEk2GD2D6TUVX9-h8OYeBI6rNYA) by Chris Anderson, the head of TED. It was a delightful reading and I highly recommend this book for anyone who interested in public speaking, TED conferences or both. It contains very deep insights of what really matters in public speaking. One of the main takeaways I got from this book is just to be yourself. 
+
+I knew I'm gonna be speaking on the same stage with awesome speakers as Kelsey Hightower, Rob Pike and Dave Cheney, and I was not even close to them as a speaker. But I have an idea. An idea that people wanted to hear about. An idea that is somehow unique and interesting - that's why my proposal was selected among others after all. I don't have to try to be such an awesome speaker as Kelsey. Instead, I have to do it in my natural way. With my accent, my first timer's nervousness and all this stuff. Just be yourself.
+
+I was slowly moving forward, wrote some initial script for the talk, was improving code step by step, and my first kind of rehearsal was scheduled for the end of June to speak at [Golang BCN](http://www.meetup.com/Golang-Barcelona/) meetup. This meetup was held in our office, and it went quite well for me. 
+![Typeform](/images/gophercon_typeform.jpg)
+I wasn't nervous at all, but I felt like I had almost no connection with people. I was extremely concentrated on my text, reciting it from memory and it felt  almost the same if I would have spoken to the wall. I didn't like it. Audience feels this lack of personal connection immediately. Anyway, that rehearsal gave me another boost of confidence.
+
+### Before GopherCon
+Few days before the flight to Denver. I'm practicing talk every day, but here are two problems - lack of private space where I can practice loudly enough and failed attempt to use [Leap Motion](https://www.leapmotion.com) controller to handle visualization with hands. Well, it was not completely failed - I added code that allows me to use this awesome sensor in my presentation long time ago, but I was extremely unsatisfied with the result. My hope was that it's just a question of practice, but then I realized that approach I used to rotate and zoom visualization is too error prone - any accidental hand movement would mess the scene.
+
+I solved the first problem by going to the sea in the late evening, and practicing talking to the sea - luckily, I live right near the beach and I have a luxury opportunity of having sunbath and swimming in the sea before going to work every day. Here is the view from my balcony:
+![Barcelona](/images/gophercon_barcelona.jpg)
+ And yeah, commute time to our awesome office is 12 minutes. And we are [hiring](http://typeform.com/careers) :)
+
+Regarding the Leap Motion issue, I decided to drop this idea and use fallback plan - usual trackpad, which is also fine. Time to pack bags.
+
+#### GopherCon!
+At this point, I want to make a pause and express my gratitude to the GopherCon org team. They did an awesome job to organize and plan my trip to Denver at the highest level. I was also proposed to have a mentor for my talk, and I happily agreed to have one, but in the end, I decided to go through by myself. The flight itself and accomodation were simply amazing - long transatlantic flight went like a breeze (I watched UEFA Euro Final live on the plane!), and the hotel, which was just in front of Colorado Convention Center, was excellent. Special kudos for the room key design. Still lives in my wallet.
+![Key](/images/gophercon_key.jpg)
+
+Finally, I'm in Denver. My flight arrived in the afternoon and it was a day of official rehearsal, so I rushed directly to the Convention Center, found a right hall, met Dave, Brian, Eric and others. Rehearsal went not that good as I expected - I forgot some words, Leap Motion controller messed up the scene, but I got the idea of how the room and the stage look like, so it was worth it anyway. Now time to go to the hotel, practice talk a few more times in a hotel room and sleep well after the long flight and make sure that jet lag won't be a problem tomorrow - I have a talk on the first day of the morning session!
+
+Jet lag is much easier for me when flying from east to west, but it still breaks sleeping pattern. I woke up at 2:30am in a cold sweat - I had a dream that I overslept my talk. In a dream, brain doesn't really know if it was for real or it was a dream, so the emotions were pretty real. Imagine my relief when I realised it was just a dream! Practicing talk in the morning again, breakfast, another practice in the room, time to go!
+
+An hour before the talk. I should have been nervous, but I haven't. It's my first public speaking experience, but I'm pretty excited to show my project to such an amazing community. It's probably was the most important thing for me - atmosphere and people were super welcoming, and it killed much of nervousness at its roots. Like why should I be nervous if those people are so welcoming and I feel like even if I'm failed they will support me and cheer in any case! It was priceless. The only strong feeling I remember is an inability to relax, to start enjoying other talks and conversations - maximum concentration for the next hour!
+
+Finally, my turn! Kelsey is doing a great introduction, technicians are helping with a microphone, I'm placing my laptop onto the lectern, connecting Leap Motion (I decided to take a risk at the last moment!) and here we go! Not to mention my accent, I felt like my concentration paid off and I really enjoyed giving the talk. I memorized talk pretty well, so I could improvise a little bit, pay more attention to pauses and even try to make an eye contact with some people between the sentences. The bright lights of projectors made it difficult, but anyway, I felt great and when people burst into the laugh on a first joke, I felt even more confident. At the moment I'm writing this, there is not video published, so I'm safe to say it went well :) Anyhow, I really had fun doing this talk!
+![Gopher](/images/gophercon_gopher.jpg)
+
+The moment I left the stage was incredible. I was still excited, but there were nothing to worry about anymore and I could finally relax and start fully enjoying the conference and other talks.
+In the next hours, I was approached by so many people and got so many kind words and responses. It was pleasant when people were coming to you just to say that your talk was great, but the most precious part of it is that the conversations were started naturally and I got a chance to meet so many awesome and talented people, I wouldn't meet otherwise.
+
+That was my only big upset of the conference - there are so many great people, and it's simply impossible to have conversations with all of them. I mean, it's technically impossible. If I spend only 10 minutes per conversation, in order to cover all gophers I need 10 min x 1400 = 14K min = 233 hours = 9.72 days of non-stop conversations! And people are the most important part of any conference and any community. At GopherCon you can randomly meet people in a deli line and one guy will be from IBM Watson, another girl will be from Docker or Intel and you can end up sitting at the same table with a vim-go creator or even with Go authors itself! It's amazing.
+
+The level of the conference organization and talks was also extremely high. One of the outstanding things was live captioning in real time. I've never seen that before and it looked like magic. :) There was a real person sitting in a special room, listening for what speakers talking and she was transcripting it in real time using special software! 
+![Caps](/images/gophercon_caps.jpg)
+
+The room was big and spacious, there was enough space for everyone and three gigantic screens made the experience comfortable even for the back rows of this huge hall.
+
+I have really enjoyed many talks, the range of topics was quite broad - from the hardcore internals of Go runtime implementation to the community growth discussions and a character study of Go gopher :) Organizers did a great job on selecting proposals and I felt really honored to be on stage with THAT people. 
+
+Another special moment for me was a speaker's dinner. I happened to be sitting at the same table as Rob Pike, Renee French, and Andrew Gerrand. Well, I'm not a fan or anything, but having dinner with such people is something I couldn't even imagine. The place was pretty loud, and it was difficult to have a comfortable conversation, but anyway we talked not only about Go, but also about casual things, about Barcelona, figure skating, alcohol drinking culture, movies etc. And from my side, I really did enjoy the conversation, especially some answers and stories told. It wasn't typical chit-chatting, for sure. So yeah, that dinner was quite special for me. Renee French drew (less than in a minute!) and presented to me that awesome picture of gopher doing figure skating! How talented she is!
+![Gopher](/images/gophercon_fs.jpg)
+ 
+It's been more than three weeks already, but it still seems like GopherCon was just yesterday. It affected my view and understanding of Go community - it's got REAL now. I mean, it's not the first Go conference I've been to, but it wasn't just a Go conference, it was a time and place where Go community becomes real. Twitter nicknames convert to the real people, Slack conversations transform into the face to face talks with a good food or coffee, and the distance between Go users and Go creators literally disappears. Is it normal to go to the tech conference and meet so many incredibly inspiring people?
+
+It's now impossible to stay aside from the Go community concerns, problems and projects. I felt myself as a part of Go community before, but now it's much more personal and deeper. The culture of respect and trust we have seems like something natural, but I know how many efforts have been put into it and how hard sometimes it's been for some people on a personal level. I feel like I and all people who attended the conference are much more attached to the community now, and it's in our power to help it grow and thrive.
+
+Here should go a huge list of thankyou's.  To the GopherCon organizers to make this event happen and for the amazing job. To Go authors for making programming fun again, world a little bit happier and software a bit more robust. The core Go community members for moving our community through all growth problems and handling them gracefully. To WomenWhoGo chapters for bringing complex and important diversity questions onto the table and making our community better in general. To Anthony Starks for giving me initial push to send the proposal for GopherCon. To my friends who went to Denver to see and support me. To all members of Go community for being so open and welcoming, for creating an incredible amount of great software and packages. To newcomers in Go for not being afraid to dive into the new world and new community.
+![Thankyou](/images/gophercon_community.jpg)
+
+Thank you for the chance to meet all of you!
+
+PS. At the moment there is no official photos or videos available yet, I will update the post once they are published. So far, here is my slides: http://divan.github.io/talks/2016/gophercon/#/
+
+PPS. The project itself has been open-sourced and available here: https://github.com/divan/gotrace
+
+
+
+
+
+
