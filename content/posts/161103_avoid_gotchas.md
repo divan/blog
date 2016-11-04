@@ -79,7 +79,7 @@ What does it mean for us? It means that we can simply represent array as a set o
 Array elements are always initialized with *zero values* of its type, 0 in our case of `[5]int`. We can index them and get the length using `len()` built-in command. Nothing else, basically.
 When you refer to the single element in the array by index and doing something like this:
 ```go
-var arr []int
+var arr [5]int
 arr[4] = 42
 ```
 you're taking the fifth (4+1) element and change its value:
