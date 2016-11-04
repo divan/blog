@@ -310,10 +310,10 @@ Hopefully, it makes sense to you now as well.&lt;/p&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in reading more about Go internals, here are a list of links that helped me:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;research.swtch.com/godata&#34;&gt;Go Data Structures&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;research.swtch.com/interfaces&#34;&gt;Go Data Structures: Interfaces&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://research.swtch.com/godata&#34;&gt;Go Data Structures&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://research.swtch.com/interfaces&#34;&gt;Go Data Structures: Interfaces&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.golang.org/go-slices-usage-and-internals&#34;&gt;Go Slices: usage and internals&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide&#34;&gt;Gopher Puzzlers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide&#34;&gt;Gopher Puzzlers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;And, of course, timeless source of usefull stuff :)&lt;/p&gt;
