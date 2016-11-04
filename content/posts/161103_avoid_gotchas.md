@@ -266,10 +266,10 @@ Not every gotcha can be attacked by learning internals. Some of them are simply 
 
 If you're interested in reading more about Go internals, here are a list of links that helped me:
  
--  [Go Data Structures](research.swtch.com/godata)
--  [Go Data Structures: Interfaces](research.swtch.com/interfaces) 
+-  [Go Data Structures](http://research.swtch.com/godata)
+-  [Go Data Structures: Interfaces](http://research.swtch.com/interfaces) 
 -  [Go Slices: usage and internals](https://blog.golang.org/go-slices-usage-and-internals)
--  [Gopher Puzzlers](talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide)
+-  [Gopher Puzzlers](http://talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide)
 
 And, of course, timeless source of usefull stuff :)
 
