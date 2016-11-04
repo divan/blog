@@ -141,7 +141,7 @@ func FindDigits(filename string) []byte {
     return digitRegexp.Find(b)
 }
 ```
-By reading let's say 10MB of data into slice and searching for only 3 digits, you may assume that you're returning 3 bytes, but, in fact, the underlying array will be kept in memory, no matter have large it is.
+By reading let's say 10MB of data into slice and searching for only 3 digits, you may assume that you're returning 3 bytes, but, in fact, the underlying array will be kept in memory, no matter how large it is.
  ![Slice 5](/images/slice5.png)
 
 And that is one of the most common Go gotchas you may read about. But once you have this picture of internal slice representation in your head, I bet it will be almost impossible to run into it!
