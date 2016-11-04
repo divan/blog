@@ -7,6 +7,9 @@ tags = ["golang", "concurrency"]
 
 +++
 
+*If you prefer video over blog posts, here is my talk on this at GopherCon 2016:*
+{{< youtube KyuFeiG3Y60 >}}
+
 One of the strongest sides of Go programming language is a built-in concurrency based on [Tony Hoare's CSP](https://en.wikipedia.org/wiki/Communicating_sequential_processes) paper. Go is designed with concurrency in mind and allows us to build complex concurrent pipelines. But have you ever wondered - how various concurrency patterns look like?
 
 Of course, you have. We're all thinking mostly by visualization in one form or another. If I ask you something involving "numbers from 1 to 100" you will have your own image of the series in your head, even without realizing it. For example, I imagine it as a line going from me with numbers from 1 to 20, then it turns 90 degrees to the right and continues to the 1000+. I recall from very young period of my life that in our kindergarten there were numbers in a cloakroom, written along the wall, and number 20 was exactly at the corner. You probably have your own image of numbers. Another common example is the visual representation of the full year with four seasons - some people see it as a box, other - as a circle.
