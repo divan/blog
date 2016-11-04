@@ -227,7 +227,7 @@ You can clearly see the `*os.PathError` variable - it's just a block of memory h
 
 In both cases, we have `nil`, but there is a huge difference between *"have an interface with a variable which value equals to nil"* and *"interface without variable"*. Having this knowledge of internal structure of interfaces, try to confuse these two examples now:
  ![Interface3](/images/iface3.png)
-Should me much harder now to run into that gotcha.
+Should be much harder now to run into that gotcha.
 
 ### Empty interface
 A few words about *empty interface* - `interface{}`. In the Go source code ([src/runtime/malloc.go](https://golang.org/src/runtime/runtime2.go#L148) it's implemented using own structure - `eface`:
