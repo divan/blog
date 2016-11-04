@@ -262,7 +262,7 @@ It's confusing and the beginning. Like, why I can do this conversion with a sing
 Hopefully, it makes sense to you now as well.
 
 # Conclusion
-Not every gotcha can be attacked by learning internals. Some of them are simply the difference between your past and new experience, and we're all have somehow different background and experience. Nevertheless, there a many of the gotchas that can be successfully avoided simply by understanding a bit deeper how Go works. I hope explanations in this post will help you build intuition on what is happening inside your programs and will make you a better developer. Go is you friend, and knowing it a bit better would not hurt anyway.
+Not every gotcha can be attacked by learning internals. Some of them are simply the difference between your past and new experience, and we're all have somehow different background and experience. Nevertheless, there a many of the gotchas that can be successfully avoided simply by understanding a bit deeper how Go works. I hope explanations in this post will help you build intuition on what is happening inside your programs and will make you a better developer. Go is your friend, and knowing it a bit better would not hurt anyway.
 
 If you're interested in reading more about Go internals, here are a list of links that helped me:
  
