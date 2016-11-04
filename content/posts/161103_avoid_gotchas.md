@@ -1,6 +1,6 @@
 +++
 Tags = ["golang"]
-date = "2016-11-03T20:25:35+01:00"
+date = "2016-11-04T13:25:35+01:00"
 title = "How to avoid Go gotchas"
 slug = "avoid_gotchas"
 
