@@ -271,7 +271,7 @@ If you're interested in reading more about Go internals, here are a list of link
 -  [Go Slices: usage and internals](https://blog.golang.org/go-slices-usage-and-internals)
 -  [Gopher Puzzlers](talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide)
 
-And, of couse, timeless source of usefull stuff :)
+And, of course, timeless source of usefull stuff :)
 
 - [Go source code](https://golang.org/src/)
 - [Effective Go](https://golang.org/doc/effective_go.html)
