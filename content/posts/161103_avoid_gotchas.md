@@ -258,7 +258,8 @@ $ go build
 cannot use []int literal (type []int) as type []interface {} in return argument
 ```
 
-It's confusing and the beginning. Like, why I can do this conversion with a single variable, but cannot do with slice? But once you know what is an empty interface (take a look at the picture above again), it becomes pretty clear, that this "conversion" is actually a quite expensive operation which involves allocating a bunch of memory and is around O(n) of time and space. And one of the common approaches in Go design is "if you want to do something expensive - do it explicitly".
+It's confusing and the beginning. Like, why I can do this conversion with a single variable, but cannot do with slice? But once you know what is an empty interface (take a look at the picture above again), it becomes pretty clear, that this "conversion" is actually a quite expensive operation which involves allocating a bunch of memory and is around O(n) of time and space. And one of the common approaches in Go design is **a"if you want to do something expensive - do it explicitly"**.
+ ![Slice Interface](/images/eface_slice.png)
 Hopefully, it makes sense to you now as well.
 
 # Conclusion
