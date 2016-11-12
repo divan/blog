@@ -154,6 +154,8 @@ Let's take the following code:
 a := make([]int, 32)
 a = append(a, 1)
 ```
+It creates a new slice of 32 ints and adds new (33rd) element.
+
 Remember `cap` - capacity in the slices? Capacity stands for *capacity to grow*. `append` checks if the slice has some more capacity to grow and, if not, allocates more memory. Allocating memory is a quite expensive operation, so `append` tries to anticipate that operation and asks not for 1 byte, but for 32 bytes more - twice as large as the original capacity. Again, allocating more memory in one go is generally cheaper and faster than allocating less memory many times.
 
 The confusing part here is that, for many reasons, allocating more memory usually means allocating it at the different address and moving data from old place to the new one. It means that address of the underlying array in the slice will also change. Let's visualize this:
@@ -169,7 +171,7 @@ You will get this:
  ![Append 2](/images/append2.png)
 Yes, you'll have two different underlying arrays and it may be quite contra-intuitive for the beginners. So, as a rule of thumb, be careful when you use subslices, and especially, subslices with append.
 
-By the way, `append` grows slice by doubling it's capacity only up to 1024, after that it will use so-called [memory size classes](src/runtime/msize.go) to guarantee that growth will be no more than ~12.5%. Requesting 64 bytes for 32 bytes array is ok, but if your slice is 4GB, allocating another 4GB for adding 1 element is quite expensive, so it makes sense.
+By the way, `append` grows slice by doubling it's capacity only up to 1024, after that it will use so-called [memory size classes](https://golang.org/src/runtime/msize.go) to guarantee that growth will be no more than ~12.5%. Requesting 64 bytes for 32 bytes array is ok, but if your slice is 4GB, allocating another 4GB for adding 1 element is quite expensive, so it makes sense.
 
 # Interfaces
 Okay, this is the most confusing thing for many people. It takes some time to wrap your head around proper usage of interfaces in Go, especially after having a traumatic experience with class-based languages. And one of the sources of confusion is a different meaning of `nil` keyword in the context of interfaces. 
