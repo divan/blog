@@ -1,5 +1,8 @@
 baseurl = "https://divan.github.io/"
 languageCode = "en-us"
+pygmentsCodeFences=true
+pygmentsStyle="monokai"
+pygmentsUseClasses=true
 title = "divan's blog"
 [params]
 	github = "divan"
