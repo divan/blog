@@ -546,3 +546,5 @@ I also would be happy to visualize more interesting concurrent algorithms and pa
 
 Happy coding!
 
+UPD: This tool is available at [github.com/divan/gotrace](https://github.com/divan/gotrace) and using Go Execution Tracer and patched runtime to generate trace.
+
