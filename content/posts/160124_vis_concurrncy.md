@@ -548,3 +548,5 @@ Happy coding!
 
 UPD: This tool is available at [github.com/divan/gotrace](https://github.com/divan/gotrace) and using Go Execution Tracer and patched runtime to generate trace.
 
+Also, I'm open for the new job, so if you're interesting company/team, have challenging problems to solve, use Go, open for remote (or you're in Barcelona) and hiring, let me know :)
+
