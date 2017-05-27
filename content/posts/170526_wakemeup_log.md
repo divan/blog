@@ -54,7 +54,7 @@ Just try it.
 You may want to use `gofmt` tool for that:
 
 ```
-gofmt -w -l -r "log.Error(x) -> log.WakeMeUpInTheMiddleOfTheNight(x)" .
+gofmt -w -l -r "log.Error -> log.WakeMeUpInTheMiddleOfTheNight" .
 ```
 
 I tried to do this with some of my projects and it was pretty interesting.
