@@ -40,7 +40,7 @@ I often use visualization of memory blocks to "see" the sizes of the variables, 
 
 For the warm-up let's visualize most basic types in Go:
 ![Basic types](/images/basic_types.png)
-Assuming you're on the 32-bit machine *(which is probably false nowadays)*, you can see that *int64* takes twice as much memory as *int32*.
+Assuming you're on the 32-bit machine *(which is probably false nowadays)*, you can see that *int64* takes twice as much memory as *int*.
 
 A bit more complicated an internal representation of pointers - in fact, it's the one block in memory, which contains a memory address to some other region in memory, where actual data is stored.  When you hear the fancy word *"dereferencing a pointer"* it actually means *"getting to the actual memory blocks by an address stored in the pointer variable"*. You may imagine it like this:
 ![Pointers](/images/pointers.png)
