@@ -60,13 +60,13 @@
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     {{ end }}
     <ul class="pager">
-      {{ if .Next }}
-      <li class="previous"><a href="{{ .Next.Permalink }}"><span aria-hidden="true">&larr;</span> Older</a></li>
+      {{ if .PrevPage }}
+      <li class="previous"><a href="{{ .PrevPage.Permalink }}"><span aria-hidden="true">&larr;</span> Older</a></li>
       {{ else }}
       <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
       {{ end }}
-      {{ if .Prev }}
-      <li class="next"><a href="{{ .Prev.Permalink }}">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      {{ if .NextPage }}
+      <li class="next"><a href="{{ .NextPage.Permalink }}">Newer <span aria-hidden="true">&rarr;</span></a></li>
       {{ else }}
       <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
       {{ end }}
