@@ -106,7 +106,7 @@ That's not very interesting, so let's use `make` to initialize slice of the give
 foo = make([]int, 5)
 ```
 will create a slice with an underlying array of 5 elements, initialized with 0, and will set both `len` and `cap` to 5.
-Cap means capacity and helps to reserve more space for the future growth. You can use `make([]int, len, cap)` syntax to specify capacity. If fact, you're almost never will have to deal with that, but it's important to understand the concept of capacity.
+Cap means capacity and helps to reserve more space for the future growth. You can use `make([]int, len, cap)` syntax to specify capacity. In fact, you're almost never will have to deal with that, but it's important to understand the concept of capacity.
 ```go
 foo = make([]int, 3, 5)
 ```
