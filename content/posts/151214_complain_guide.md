@@ -87,6 +87,8 @@ If you come from Haskell, I shouldn't give you any advice. You already must be a
 
 Even if you [intuitively understand](https://honza.ca/2015/11/language-choice) that Go is way more practical than Haskell and entry barrier really matters - keep insisting that it has "objectively poor design". Because everyone knows which language has objectively good design.
 
+Bonus points can be earned by [using](https://twitter.com/bhurt42/status/940629768126521344) thought-terminating cliché that Go authors think developers are not smart enough to understand brilliant language, which there only one and only. Benefits of using this soundbite "[were demonstrated over and over](https://twitter.com/puffnfresh/status/940829295290830849)".
+
 # Conclusion
 I hope this article will find its readers. In 2016, we need more articles with rants on Go - at least 6 to keep the trend. Some of the articles in the list above written by students and schoolboys, so if you just started CS class and don't have any real-life experience - don't hesitate to tell the world how bad Go is.
 
