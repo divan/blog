@@ -188,7 +188,7 @@ There still a need to somehow communicate WebSocket address to the mobile app, a
 
 ![TXQR tester design](/images/txqr_tester_design.png)
 
-So, in the end, I just have to put the mobile phone on the tripod, and it will talk to the app via scanning QR codes and sending messages WebSocket.
+So, in the end, I just have to put the mobile phone on the tripod, and let it talk to the app via scanning QR codes and send messages via WebSocket.
 
 ![TXQR tester demo](/images/txqr_tester.gif#center)
 
