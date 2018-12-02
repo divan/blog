@@ -4,7 +4,6 @@ title = "Fountain codes and animated QR"
 slug = "fountaincodes"
 Description = "Using fountain codes to speed up animated QR data transfer"
 Tags = ["golang", "coding theory", "fountain codes"]
-draft = true
 
 +++
 
