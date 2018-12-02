@@ -209,7 +209,7 @@ After a few hours, I downloaded CSV file and did some quick analysis and visuali
 
 A picture is worth a thousands words, but 3D interactive widgets is worth a thousand pictures. Here is 3D scatterplot for obtained results:
 
-{{< plotly user="divan0" share_code="t8DizOL9dynI6NTcLA88Xi" title="qr_scan_results">}}
+{{< plotly 1 "qr_scan_results" >}}
 
 The best result was 1.4 secs, which is almost 9KB/s! This result has been recorded at a rate of 11 frames per second and chunk size of 850 bytes with Medium recovery level.  In fact, however, at such encoding ratio and fps the probability of phone camera missing a frame was quite high, so in many cases it was just looping over and over, waiting for the missed frame until the test round timed out.
 
