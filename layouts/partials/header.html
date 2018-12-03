@@ -24,6 +24,10 @@
   {{ else }}
   <meta property="og:type" content="website" />
   {{ end }}
+  {{ if .Params.og_image }}
+  <meta property="og:image" content="{{ .Params.og_image | absURL }}"/>
+  <meta property="og:image:secure_url" content="{{ .Params.og_image | absURL }}"/>
+  {{ end }}
 
   <title>
     {{ if ne .URL "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}
