@@ -53,7 +53,7 @@ For my txqr project, it means that fountain code should give on average much low
 
 The google's package gofountain implements several fountain codes in Go, including Luby transform code. It has [tiny API](https://godoc.org/github.com/google/gofountain#NewBinaryCodec) (which is a good sign for the library) – basically just `Codec` interface with a few implementations and `EncodeLTBlocks()` function, plus a few pseudorandom generators helpers.
 
-However, I stuck trying to understand what does the second parameter of `EncodeLTBlocks()` is supposed to mean:
+However, I stuck while trying to understand what does the second parameter of `EncodeLTBlocks()` is supposed to mean:
 
 ```go
 func EncodeLTBlocks(message []byte, encodedBlockIDs []int64, c Codec) []LTBlock
@@ -65,9 +65,13 @@ It was close enough – debug output from tests produced blocks that looked lik
 
 I checked [GoDoc page for gofountain](https://godoc.org/github.com/google/gofountain#NewBinaryCodec) to see what other packages use it, and found only one open-source library for transmitting large files over lossy networks - [pump](https://github.com/sudhirj/pump) by [Sudhir Jonathan](https://github.com/sudhirj), I decided to leverage the power of friendly Gophers community and contacted Sudhir in Gophers slack, asking if he could help me to clarify those IDs usage. 
 
-And that worked, Sudhir was extremely helpful and gave me an elaborate answer, which clarified all my doubts. The right way to use this library was to pass incremental IDs for `1..N*r` blocks, where N is the total amount of source blocks, and r is a redundancy factor., which probably should lay in 1.4-2.0 range. 
+And that worked, Sudhir was extremely helpful and gave me an elaborate answer, which clarified all my doubts. The right way to use this library was to pass incremental IDs for blocks continuously – for example, `1..N`, `N..2N`, `2N..3N`, etc. As generally we don't know how noisy the channel is, it's important to generate new blocks all the time.
 
-As LT codes designed to provide limitless source of blocks, the proper usage would be to generate random chunks of IDs, and call `EncodeLTBlocks` in a loop, but as `txqr` API expected to return a concrete number of chunks to be encoded as QR, I decided not to break API for now and went with redundancy factor approach. So for `encodedBlockIDs` parameter, I use a simple helper function:
+So proper usage would be to generate chunks of IDs, and call `EncodeLTBlocks` in a loop. But in order to achieve that, I had to ensure that QR encoding speed is good enough to generate new blocks on the fly. For 15 frame per second rate, the total time for encoding next block and generating a new QR code should be less than 1s/15 = 66ms. Which is obviously doable, but would require careful benchmarking and optimizing to ensure this is true for GopherJS-transpiled version on single core in the browser.
+
+Plus, there were current design limitations –  `txqr.Encode()` API expects to return a concrete number of chunks to be encoded as QR frames, plus `txqr-tester` generate animated GIF file upfront to ensure reliable framerate when displayed in the browser, so, I decided not to break API for now and went with redundancy factor approach. 
+
+Redundancy factor approach is based on the assumption that in my case noise estimations is more or less predictable – I'd say no more than 20% of skipped frames. We can generate `N*redundancyFactor` frames and just loop it over as in repetitive codes approach. This approach is sub-optimal in general case, but for my task and controlled environment it was good enough. So for `encodedBlockIDs` parameter, I use a simple helper function:
 
 ```go
 // ids create slice with IDs for 0..n values.
@@ -127,7 +131,7 @@ Here is a complete interactive 3D interactive graph with results:
 
 Fountain codes are definitely an exciting thing to work with. Being non-trivial, but simple, narrow scoped, but extremely useful, clever and fast, they undoubtedly fall into the "cool algorithms" bucket. They're one of those algorithms that can give you awe once you understand how they work.
 
-For txqr, they offered dramatic performance and reliability improvements, and I'm looking forward to play with more efficient algorithms than LT codes.
+For txqr, they offered dramatic performance and reliability improvements, and I'm looking forward to play with more efficient algorithms than LT codes, and implement proper API adapted to the streamline nature of fountain codes.
 
 Gomobile and Gopherjs, again, showed their awesomeness by decreasing the hassle of using already written and tested code in the browser and mobile platforms to a lowest possible minimum.
 
