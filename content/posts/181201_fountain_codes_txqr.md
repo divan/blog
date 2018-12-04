@@ -52,7 +52,7 @@ For my txqr project, it means that fountain code should give on average much low
 
 # google/gofountain
 
-The google's package gofountain implements several fountain codes in Go, including Luby transform code. It has [tiny API](https://godoc.org/github.com/google/gofountain#NewBinaryCodec) (which is a good sign for the library) – basically just `Codec` interface with a few implementations and `EncodeLTBlocks()` function, plus a few pseudorandom generators helpers.
+The google's package gofountain implements several fountain codes in Go, including Luby transform code. It has [tiny API](https://godoc.org/github.com/google/gofountain) (which is a good sign for the library) – basically just `Codec` interface with a few implementations and `EncodeLTBlocks()` function, plus a few pseudorandom generators helpers.
 
 However, I stuck while trying to understand what does the second parameter of `EncodeLTBlocks()` is supposed to mean:
 
@@ -64,7 +64,7 @@ Why would I want to provide block IDs to the encoder, I don't even want to worry
 
 It was close enough – debug output from tests produced blocks that looked like what I expected, but decoding had never been finishing.
 
-I checked [GoDoc page for gofountain](https://godoc.org/github.com/google/gofountain#NewBinaryCodec) to see what other packages use it, and found only one open-source library for transmitting large files over lossy networks - [pump](https://github.com/sudhirj/pump) by [Sudhir Jonathan](https://github.com/sudhirj), I decided to leverage the power of friendly Gophers community and contacted Sudhir in Gophers slack, asking if he could help me to clarify those IDs usage. 
+I checked [GoDoc page for gofountain](https://godoc.org/github.com/google/gofountain) to see what other packages use it, and found only one open-source library for transmitting large files over lossy networks - [pump](https://github.com/sudhirj/pump) by [Sudhir Jonathan](https://github.com/sudhirj), I decided to leverage the power of friendly Gophers community and contacted Sudhir in Gophers slack, asking if he could help me to clarify those IDs usage. 
 
 And that worked, Sudhir was extremely helpful and gave me an elaborate answer, which clarified all my doubts. The right way to use this library was to pass incremental IDs for blocks continuously – for example, `1..N`, `N..2N`, `2N..3N`, etc. As generally we don't know how noisy the channel is, it's important to generate new blocks all the time.
 
