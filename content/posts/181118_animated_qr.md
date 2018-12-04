@@ -7,7 +7,7 @@ Tags = []
 
 +++
 
-TL;DR: a weekend project for transferring data via animated QR codes, written in Go. The Go code is reused for mobile apps using Gomobile, and in a web application for automating testing QR codes parameters, built with GopherJS and Vecty framework. 
+TL;DR: a weekend project for transferring data via animated QR codes, written in Go and using fountain erasure codes. The Go code is reused for mobile apps using Gomobile, and in a web application for automating testing QR codes parameters, built with GopherJS and Vecty framework. 
 
 ![Transfer file via QR code between two phones](/images/txqr_send.gif#center) 
 
@@ -51,6 +51,8 @@ The protocol is quite simple – each frame starts with a prefix "NUM/TOTAL|", (
 ![TXQR protocol](/images/txqr_protocol.png)
 
 It's that simple, and [here](https://github.com/divan/txqr) is a Go implementation of the protocol, along with convenient wrappers for encoding and decoding QR codes. The cool part was to make a mobile app that can use this code.
+
+**UPD**: *txqr now uses much more efficient approach using [fountain codes](https://en.wikipedia.org/wiki/Fountain_code). See the [follow-up article]({{< ref "/posts/181201_fountain_codes_txqr" >}}) with detailed description and results comparison.*
 
 ## Gomobile
 
@@ -253,3 +255,6 @@ So if you have never tried gomobile or gopherjs – I encourage you to try it o
 - https://github.com/divan/txqr-reader
 - https://github.com/gopherjs/vecty
 - https://github.com/golang/mobile
+
+# Update
+**UPD**: *txqr now uses much more efficient approach using [fountain codes](https://en.wikipedia.org/wiki/Fountain_code). See the [follow-up article]({{< ref "/posts/181201_fountain_codes_txqr" >}}) with detailed description and results comparison.*
