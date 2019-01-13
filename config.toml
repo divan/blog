@@ -1,6 +1,7 @@
 baseurl = "https://divan.github.io/"
 languageCode = "en-us"
 title = "divan's blog"
+pygmentsCodeFences = true
 [params]
 	github = "divan"
 	twitter = "idanyliuk"
