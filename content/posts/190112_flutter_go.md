@@ -11,7 +11,7 @@ og_image = "/images/go_flutter_vscode.png"
 
 I've recently discovered [Flutter](https://flutter.io) – a new Google's framework for mobile development – for myself and even had an experience of teaching Flutter basics to the person who has never been doing programming at all. Flutter is written in Dart – programming language born in a Chrome browser and then escaped to the console land – and that made me think "hey, Flutter could have been easily implemented in Go as well"!
 
-Why not? Both Go and Flutter were born inside Google (and share some approaches that make them great), both strongly-typed, compiled languages – in a slightly different turn of events, Go could definitely have been a choice for such an ambitious project as Flutter. And Go is much easier to explain to the person who has never been programming before.
+Why not? Both Go and Dart were born inside Google (and share some approaches that make them great), both strongly-typed, compiled languages – in a slightly different turn of events, Go could definitely have been a choice for such an ambitious project as Flutter. And Go is much easier to explain to the person who has never been programming before.
 
 So let's pretend Flutter is written in Go already. How would the code look like?
 
