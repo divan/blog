@@ -284,4 +284,4 @@ Happy hacking!
 
 PS. I also gave a similar talk on [Golang BCN](http://www.meetup.com/Golang-Barcelona/) Meetup in November '16.
 
-Here are the slides: [How To Avoid Go Gotchas.pdf](http://divan.github.io/talks/2016/bcn/HowToAvoidGoGotchas.pdf)
+Here are the slides: [How To Avoid Go Gotchas.pdf](http://divan.dev/talks/2016/bcn/HowToAvoidGoGotchas.pdf)

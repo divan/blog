@@ -74,9 +74,9 @@ and it's perfectly valid case. It's [in the spec](https://golang.org/doc/effecti
 
 > That type must either be the concrete type held by the interface, or a second interface type that the value can be converted to.
 
-I do believe that to truly understand interfaces you need to learn how they are implemented. I wrote a blog post some time ago with visual explanations of interfaces - ["How to avoid go gotchas"](https://divan.github.io/posts/avoid_gotchas/). Here is a refresher picture what interface is under the hood:
-![interfaces](https://divan.github.io/images/iface2.png)
-If you haven't read it yet, [please do](https://divan.github.io/posts/avoid_gotchas/) - I'm genuinely interested in a feedback and hope my way of explaining things works for others.
+I do believe that to truly understand interfaces you need to learn how they are implemented. I wrote a blog post some time ago with visual explanations of interfaces - ["How to avoid go gotchas"](https://divan.dev/posts/avoid_gotchas/). Here is a refresher picture what interface is under the hood:
+![interfaces](https://divan.dev/images/iface2.png)
+If you haven't read it yet, [please do](https://divan.dev/posts/avoid_gotchas/) - I'm genuinely interested in a feedback and hope my way of explaining things works for others.
 
 Now, back to our the initial code. What was happening there is following:
 
@@ -90,7 +90,7 @@ Hence, type assertion `err.(MyError)` is always positive for any non-nil variabl
 
 Misunderstanding interfaces can lead to some non-obvious bugs, so it's crucial to build a proper understanding of what concrete and interface types are in Go.
 
-If you feel like you don't have a clear picture, try one of my previous articles, where I tried to explain interfaces visually - ["How to avoid Go gotchas"](https://divan.github.io/posts/avoid_gotchas/). And, as always, don't forget the (re)read the ["Effective Go"](https://golang.org/doc/effective_go.html#interfaces_and_types).
+If you feel like you don't have a clear picture, try one of my previous articles, where I tried to explain interfaces visually - ["How to avoid Go gotchas"](https://divan.dev/posts/avoid_gotchas/). And, as always, don't forget the (re)read the ["Effective Go"](https://golang.org/doc/effective_go.html#interfaces_and_types).
 
 Also, proper testing - when you test not only happy path - would have caught this bug before it went to production.
 

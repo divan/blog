@@ -22,11 +22,11 @@ Next weekend I've spent writing some JS code and learning [Three.js](http://thre
 
 Next challenge was to automate tracing concurrency steps and timings automatically from any Go program. My first attempt was to modify AST of the source and insert Println() calls saying something like "goroutine started", "send to channel value X" and so on. After practicing some kung-fu with go/[ast,parser,types} packages, I came with the solution, but it was inherently flawed. It worked for very simple examples, where channels had the same name. For more complex examples I had to rename it manually, expand recursions and so on.
 
-Anyway, it was enough to create slides for the talk for the meetup. I [gave a talk](http://divan.github.io/talks/2016/lviv/#/), but it was quite bad, as I almost didn't prepare and I was mostly busy with organization and preparing the first talk. So in a few days, on my way home, on a train, I wrote an article ["Visualising Concurrency in Go"](https://divan.github.io/posts/go_concurrency_visualize/) and published it next day.
+Anyway, it was enough to create slides for the talk for the meetup. I [gave a talk](http://divan.dev/talks/2016/lviv/#/), but it was quite bad, as I almost didn't prepare and I was mostly busy with organization and preparing the first talk. So in a few days, on my way home, on a train, I wrote an article ["Visualising Concurrency in Go"](https://divan.dev/posts/go_concurrency_visualize/) and published it next day.
 ![PrimeSieve](/demos/gifs/primesieve.gif)
 
 ### Article
-[Article](https://divan.github.io/posts/go_concurrency_visualize/) was very well received. I was surprised by the number of responses, retweets, likes and stars. I got a few job proposals, letters asking permission to republish it or translate into another language. One of the letters was from [Anthony Starks](https://twitter.com/ajstarks), the author of amazing SVG library [SVGo](https://github.com/ajstarks/svgo), who asked if I'm considering to propose this idea as a talk for GopherCon. I didn't even consider myself as a speaker at the conference of that level, but next day I actually sent the proposal without any expectations.
+[Article](https://divan.dev/posts/go_concurrency_visualize/) was very well received. I was surprised by the number of responses, retweets, likes and stars. I got a few job proposals, letters asking permission to republish it or translate into another language. One of the letters was from [Anthony Starks](https://twitter.com/ajstarks), the author of amazing SVG library [SVGo](https://github.com/ajstarks/svgo), who asked if I'm considering to propose this idea as a talk for GopherCon. I didn't even consider myself as a speaker at the conference of that level, but next day I actually sent the proposal without any expectations.
 
 In a few weeks, I got an email that my proposal has been accepted. I'm gonna be speaking at GopherCon! Wow!
 
@@ -99,7 +99,7 @@ Here should go a huge list of thankyou's.  To the GopherCon organizers to make t
 
 Thank you for the chance to meet all of you!
 
-PS. At the moment there is no official photos or videos available yet, I will update the post once they are published. So far, here is my slides: http://divan.github.io/talks/2016/gophercon/#/
+PS. At the moment there is no official photos or videos available yet, I will update the post once they are published. So far, here is my slides: http://divan.dev/talks/2016/gophercon/#/
 
 PPS. The project itself has been open-sourced and available here: https://github.com/divan/gotrace
 

@@ -1,4 +1,4 @@
-baseurl = "https://divan.github.io/"
+baseurl = "https://divan.dev/"
 languageCode = "en-us"
 title = "divan's blog"
 pygmentsCodeFences = true
